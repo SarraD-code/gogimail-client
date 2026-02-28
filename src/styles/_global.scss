@@ -7,6 +7,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: $primary-font;
+  font-weight: $font-regular;
   // border: 1px dashed rgb(33, 21, 21); // Temporary for debugging
 }
 
