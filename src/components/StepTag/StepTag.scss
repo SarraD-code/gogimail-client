@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.step-tag {
+    font-family: $secondary-font;
+    padding: 12px 20px;
+    color: #5A8CEA;
+    border-radius: 40px;
+    border: 1px solid #5A8CEA;
+}
