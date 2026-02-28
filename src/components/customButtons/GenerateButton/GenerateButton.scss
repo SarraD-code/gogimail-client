@@ -1,0 +1,25 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/functions" as *;
+@use "../../../styles/mixins" as *;
+
+.generate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 16px 20px;
+    background-color: #5B8EEE;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: pxToRem(20);
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+
+    &:hover {
+        background-color: #4a7bd6;
+    }
+}

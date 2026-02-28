@@ -7,6 +7,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: $primary-font;
+  font-weight: $font-regular;
   // border: 1px dashed rgb(33, 21, 21); // Temporary for debugging
 }
 
@@ -14,7 +16,8 @@ body {
   font-family: $primary-font;
   font-weight: $font-regular;
   margin: 0;
-  background-color: $color-light-grey;
+  // background-color: $color-light-grey;
+  background-color: $color-instock-black;
 }
 
 .display-mobile-only {

@@ -1,0 +1,73 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.content-type-selector {
+    &__container {
+        font-size: pxToRem(16);
+        padding: 20px;
+        font-family: $primary-font;
+        // max-width: pxToRem(400);
+        background-color: #F5F5F5;
+        border-radius: 12px;
+        width: 100%;
+    }
+
+    &__section {
+        margin-bottom: 20px;
+        font-family: $primary-font;
+    }
+
+    &__label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-family: $primary-font;
+    }
+
+    &__dropdown {
+        font-size: pxToRem(16);
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        background-color: #f5f5f5;
+        cursor: pointer;
+        font-family: $primary-font;
+
+        &.selected {
+            background-color: #4a90e2;
+            color: white;
+        }
+    }
+
+    &__button-group {
+        display: flex;
+        gap: 10px;
+        font-family: $primary-font;
+    }
+
+    &__goal-btn {
+        font-size: pxToRem(16);
+        padding: 8px 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        background: white;
+        cursor: pointer;
+        font-family: $primary-font;
+
+        &:hover,
+        &:focus {
+            border-color: #5A8CEA;
+            color: #5A8CEA;
+        }
+
+        &.active {
+            // background-color: #e0e0ff;
+            border-color: #5A8CEA;
+            color: #5A8CEA;
+            font-weight: bold;
+            font-family: $primary-font;
+        }
+    }
+}
