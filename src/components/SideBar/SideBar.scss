@@ -1,0 +1,67 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: calc(95% - pxToRem(60));
+    margin-left: pxToRem(18);
+    min-height: pxToRem(580);
+    width: pxToRem(282); /* Set the width of the sidebar */
+    position: fixed; /* Fix the sidebar to the left */
+    margin-top: pxToRem(0);
+    left: 0;
+    justify-content: flex-start;
+    background-color: $color-indigo; /* Background color */
+    padding: 20px; /* Padding for the sidebar */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Optional shadow */
+    border-radius: $border-radius-md;
+}
+
+
+
+.sidebar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar ul li {
+    margin: pxToRem(10) 0; /* Space between items */
+}
+
+.sidebar ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+}
+
+.sidebar-socials {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: auto;
+    }
+
+
+
+.navigation_link {
+  text-decoration: none;
+  flex: 1;
+  width: 100%;
+  display: flex;
+
+  @include tablet {
+    flex: 0 0 auto;
+  }
+}
+
+.navigation_link .navigationbutton--primary {
+  width: 100%;
+
+  
+}
+
+.navigation_link--active .navigationbutton--primary {
+  background-color: $color-indigo-highlight;
+  color: $color-white;
+}

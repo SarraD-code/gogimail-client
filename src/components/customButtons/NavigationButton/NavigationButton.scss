@@ -1,0 +1,54 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/functions" as *;
+
+.navigationbutton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  
+  &--primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: pxToRem(8) pxToRem(16);
+    font-size: pxToRem(13);
+    font-family: "Titillium Web", sans-serif;
+    height: 38px;
+    width: fit-content;
+    border-radius: $border-radius-md;
+    font-weight: 600;
+    border: 0px solid $color-cloud;
+    cursor: pointer;
+    background-color: $color-indigo;
+    color: $color-white;
+    gap: pxToRem(10);
+
+    @include tablet {
+        height: pxToREM(38);
+        padding: pxToRem(8) pxToRem(16) pxToRem(8) pxToRem(16);
+        width: fit-content;
+        font-size: pxToRem(14);
+  }
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-indigo-highlight;
+      
+    }
+    &:active {
+      background: $color-indigo;
+      color: $color-white;
+    }
+    &:inactive {
+      color: $color-cloud;
+    }
+  }
+
+  &:disabled {
+    color: $color-slate;
+    background-color: $color-light-grey;
+    border: 1px solid $color-slate;
+  }
+}
