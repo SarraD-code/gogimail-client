@@ -33,7 +33,7 @@ function App() {
       <ScrollToTop />
       <Header />
       <SideBar />
-      <Routes>
+      <Routes> 
         <Route path="/" element={<Home />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="*" element={<PageNotFound title="404 - PAGE NOT FOUND"
