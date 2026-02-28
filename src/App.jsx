@@ -6,7 +6,6 @@ import Home from './pages/Home/Home.jsx';
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import PageNotFound from "./pages/PageNotFound/PageNotFound.jsx";
-import WritePromptPage from './pages/WritePromptPage/WritePromptPage.jsx';
 import Generate from "./pages/Generate/Generate.jsx";
 import AnalyticsPage from "./pages/Analytics/AnalyticsPage.jsx";
 import SideBar from "./components/SideBar/SideBar.jsx";
@@ -38,7 +37,7 @@ function App() {
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="*" element={<PageNotFound title="404 - PAGE NOT FOUND"
           content="The content you are looking for cannot be found." />} />
-        <Route path="/test" element={<WritePromptPage />} />
+        <Route path="/test" element={""} />
       </Routes>
       <Footer />
     </BrowserRouter>
