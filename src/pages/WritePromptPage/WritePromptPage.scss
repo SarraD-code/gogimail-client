@@ -2,14 +2,3 @@
 @use "../../styles/functions" as *;
 @use "../../styles/mixins" as *;
 
-.write-prompt-page {
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-    &__content-audience-wrapper {
-        display: flex;
-        gap: 30px;
-    }
-}
