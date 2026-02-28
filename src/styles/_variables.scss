@@ -6,6 +6,9 @@ $secondary-font: "Martian Mono", monospace;
 $font-semi-bold: 600;
 $font-regular: 400;
 
+//Button radius
+$border-radius-md: 20px;
+
 //All Wrappers Max Width
 $max-width-wrapper: pxToRem(1020);
 
@@ -70,13 +73,14 @@ $line-height-dt-p3: pxToRem(18);
 
 /*Colors*/
 //Primary colors
-$color-instock-black: #13182C;
-$color-instock-indigo: #2E66E5;
+$color-black: #13182C;
+$color-indigo: #0074d9;
 $color-white: #FFFFFF;
 
 //Secondary colors
 $color-slate: #5C667E;
 $color-cloud: #BDC5D5;
+$color-indigo-highlight: #269fff;
 
 //Background colors
 $color-graphite: #232940;

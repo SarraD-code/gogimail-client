@@ -2,3 +2,70 @@
 @use "../../styles/functions" as *;
 @use "../../styles/mixins" as *;
 
+
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    height: pxToRem(120);
+    margin-top: auto;
+    min-height: calc(100vh - (pxToRem(240)))
+
+
+}
+
+.footer-logo-wrapper {
+    display: flex;
+    margin-top: pxToRem(20);
+    width: 20%;
+    justify-content: center;
+    height: pxToRem(60);
+}
+
+.footer-link-wrapper {
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+    margin-top: pxToRem(15);
+    margin-left: 5%;
+    margin-right: 5%;
+    height: pxToRem(70);
+    
+    @include tablet {
+        width: 20%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    @include desktop {
+        width:20%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+
+.navigation_link {
+  text-decoration: none;
+  flex: 1;
+  display: flex;
+
+  @include tablet {
+    flex: 0 0 auto;
+  }
+}
+
+.navigation_link .navigationbutton--primary {
+  width: 100%;
+
+  @include tablet {
+    width: auto;
+  }
+}
+
+.navigation_link--active .navigationbutton--primary {
+  background-color: $color-indigo;
+  color: $color-white;
+}
