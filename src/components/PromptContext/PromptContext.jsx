@@ -1,17 +1,7 @@
 import { useState } from 'react';
 import './PromptContext.scss';
 
-const PromptContext = () => {
-  const [context, setContext] = useState({
-    brief: '',
-    include: '',
-    avoid: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setContext(prev => ({ ...prev, [name]: value }));
-  };
+const PromptContext = ({ onChange, values }) => {
 
   return (
     <div className="prompt-context__container">
@@ -22,9 +12,10 @@ const PromptContext = () => {
         <label>Key Messages/Brief</label>
         <textarea 
           name="brief"
-          value={context.brief}
-          onChange={handleChange}
+          value={values.brief}
+          onChange={onChange}
           className="prompt-context__full-width"
+          placeholder='Write your prompt here'
         />
       </div>
       
@@ -34,18 +25,20 @@ const PromptContext = () => {
           <label>Do Include</label>
           <textarea 
             name="include"
-            value={context.include}
-            onChange={handleChange}
+            value={values.include}
+            onChange={onChange}
             className="prompt-context__half-width"
+            placeholder='Add notes here'
           />
         </div>
         <div className="prompt-context__input-group prompt-context__flex-1">
           <label>Avoid</label>
           <textarea 
             name="avoid"
-            value={context.avoid}
-            onChange={handleChange}
+            value={values.avoid}
+            onChange={onChange}
             className="prompt-context__half-width"
+            placeholder='Add notes here'
           />
         </div>
       </div>

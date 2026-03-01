@@ -4,11 +4,13 @@
 
 .page-not-found {
     &__header {
-        background-color: $color-white;
+        background-color: #F5F5F5;
         display: flex;
         justify-content: flex-start;
         align-items: baseline;
         gap: 8px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
 
         padding: pxToRem(32) pxToRem(24) pxToRem(24);
 
@@ -23,9 +25,9 @@
 
     &__title {
         font-family: $primary-font;
-        color: $color-black;
+        color: #1D1B20;
         margin: 0;
-        font-weight: $font-semi-bold;
+        font-weight: 400;
         font-size: $text-size-m-h1;
         line-height: $line-height-m-h1;
 
@@ -36,10 +38,13 @@
     }
 
     &__content {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: #F5F5F5;
         font-family: $primary-font;
         font-size: $text-size-m-p1;
         line-height: $line-height-m-p1;
-        color: $color-black;
+        color: #1D1B20;
         font-weight: $font-regular;
         margin: 0;
         padding: pxToRem(32) pxToRem(24) pxToRem(24);

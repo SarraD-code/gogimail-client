@@ -1,0 +1,82 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.editor-container {
+    border: 2px solid #5A8CEA;
+    border-radius: 12px;
+    max-width: pxToRem(660);
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header Styles */
+.editor-header {
+    background-color: #5A8CEA;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #CACACA;
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: pxToRem(16);
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #CACACA;
+    font-family: $secondary-font;
+    font-weight: 400;
+    font-size: pxToRem(12);
+    border: 1px solid #CACACA;
+    background-color: #111117;
+
+    &:hover,
+    &:focus {
+        color: #F3F3F3;
+        border-color: #F3F3F3;
+    }
+}
+
+/* Content Area */
+.editor-content {
+    padding: 16px;
+    color: #49454F;
+    background-color: #F5F5F5;
+    font-weight: 400;
+    font-size: pxToRem(14);
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: start;
+}
+
+.email-subject {
+    font-weight: 500;
+    font-size: pxToRem(16);
+    color: #1D1B20;
+    margin-bottom: 20px;
+}
+
+.email-body {
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Footer */
+.editor-footer {
+    background-color: #B3B3B3;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px;
+    font-weight: 500;
+    font-size: pxToRem(14);
+    color: #F5F5F5;
+}

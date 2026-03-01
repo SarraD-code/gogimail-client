@@ -1,10 +1,12 @@
 import "./Generate.scss";
 import WritePromptForm from "../../components/WritePromptForm/WritePromptForm";
+import PageLayout from "../../components/PageLayout/PageLayout";
 
-const Generate = ({ }) => {
-    console.log("Generate Page")
+const Generate = ({ setEmails }) => {
     return (
-        <WritePromptForm />
+        <PageLayout>
+            <WritePromptForm setEmails={setEmails} />
+        </PageLayout>
     );
 }
 export default Generate;

@@ -1,0 +1,52 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.scoring-card {
+    border-radius: 12px;
+    overflow: hidden;
+    //   border: 1px solid #ddd;
+    max-width: pxToRem(310);
+    background: #F5F5F5;
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: pxToRem(14);
+}
+
+.card-header {
+    background-color: #5A8CEA;
+    color: #F5F5F5;
+    padding: 26px 16px;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.scoring-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 15px;
+}
+
+.scoring-label {
+    font-family: $secondary-font;
+    font-weight: 400;
+    font-size: pxToRem(12);
+    color: #49454F;
+    width: pxToRem(90);
+}
+
+.progress-bg {
+    flex: 1;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #5A8CEA;
+    border-radius: 4px;
+}

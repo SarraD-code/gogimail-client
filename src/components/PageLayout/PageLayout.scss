@@ -1,0 +1,24 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.page-layout {
+    &__wrapper {
+        @extend %wrapper;
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        gap: 24px;
+    }
+
+    &__sidebar-content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    &__main-content {
+        padding: 20px 0 50px 0;
+        width: 100%;
+    }
+}

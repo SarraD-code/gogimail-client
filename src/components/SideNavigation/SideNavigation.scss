@@ -1,0 +1,57 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.side-navigation {
+    width: pxToRem(282);
+    background-color: #5B8EEE;
+    color: #F5F5F5;
+    padding: 12px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: pxToRem(14);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    &__section-header {
+        padding: 20px 0 10px 0;
+        font-size: pxToRem(14);
+        font-weight: bold;
+        color: #111117;
+        border-top: 1px solid #111117;
+    }
+
+    &__nav-item {
+        text-decoration: none;
+        color: #F5F5F5;
+        display: flex;
+        align-items: center;
+        padding: 20px 24px;
+        cursor: pointer;
+        border-radius: 8px;
+        gap: 12px;
+
+        &:hover,
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &.highlight {
+            background-color: #F5F5F5;
+            color: #111117;
+            font-weight: 500;
+            // font-size: pxToRem(16);
+
+            & .side-navigation__icon path {
+                fill: #434343;
+            }
+        }
+    }
+
+    &__count {
+        margin-left: auto;
+        font-size: pxToRem(14);
+        font-weight: 400;
+    }
+}

@@ -14,8 +14,8 @@ const AudienceSelector = () => {
       <div className="audience-selector__section">
         <label className="audience-selector__label">Audience</label>
         <div className="audience-selector__dropdown-wrapper">
-          <select 
-            value={selectedTemplate} 
+          <select
+            value={selectedTemplate}
             onChange={(e) => setSelectedTemplate(e.target.value)}
             className={`audience-selector__dropdown ${selectedTemplate ? 'selected' : ''}`}
           >
@@ -31,6 +31,7 @@ const AudienceSelector = () => {
         <div className="audience-selector__button-group">
           {tones.map(tone => (
             <button
+              type="button"
               key={tone}
               className={`audience-selector__tone-btn ${selectedTone === tone ? 'active' : ''}`}
               onClick={() => setSelectedTone(tone)}

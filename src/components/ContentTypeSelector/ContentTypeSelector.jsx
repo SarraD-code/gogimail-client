@@ -14,8 +14,8 @@ const ContentTypeSelector = () => {
       <div className="content-type-selector__section">
         <label className="content-type-selector__label">Content Type</label>
         <div className="content-type-selector__dropdown-wrapper">
-          <select 
-            value={selectedTemplate} 
+          <select
+            value={selectedTemplate}
             onChange={(e) => setSelectedTemplate(e.target.value)}
             className={`content-type-selector__dropdown ${selectedTemplate ? 'selected' : ''}`}
           >
@@ -31,6 +31,7 @@ const ContentTypeSelector = () => {
         <div className="content-type-selector__button-group">
           {goals.map(goal => (
             <button
+              type="button"
               key={goal}
               className={`content-type-selector__goal-btn ${selectedGoal === goal ? 'active' : ''}`}
               onClick={() => setSelectedGoal(goal)}

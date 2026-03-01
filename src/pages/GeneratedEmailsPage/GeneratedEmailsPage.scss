@@ -1,0 +1,22 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.generated-emails-page {
+    &__content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__cards-Wrapper {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    &__btn-Wrapper {
+        display: flex;
+        gap: 14px
+    }
+}

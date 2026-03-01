@@ -1,0 +1,27 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.header-navigation {
+    display: flex;
+    // justify-content: start;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+
+    &__link {
+        text-decoration: none;
+        padding: 12px 20px;
+        font-family: $secondary-font;
+        font-size: pxToRem(12);
+        color: #808080;
+        border: 1px solid #808080;
+        border-radius: 40px;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            color: #F3F3F3;
+            border-color: #F3F3F3;
+        }
+    }
+}

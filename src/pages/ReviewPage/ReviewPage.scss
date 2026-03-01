@@ -1,0 +1,35 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.review-page {
+    &__content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__emails-controls-wrapper {
+        display: flex;
+        gap: 25px;
+    }
+
+    &__controls-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 100px;
+    }
+
+    &__scoring-suggestions-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &__action-buttons-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
