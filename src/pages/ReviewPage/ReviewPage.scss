@@ -1,3 +1,13 @@
 @use "../../styles/variables" as *;
 @use "../../styles/functions" as *;
 @use "../../styles/mixins" as *;
+
+.review-page {
+    &__content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    
+}

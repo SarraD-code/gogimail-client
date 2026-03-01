@@ -25,9 +25,9 @@
 
     &__title {
         font-family: $primary-font;
-        color: $color-black;
+        color: #1D1B20;
         margin: 0;
-        font-weight: $font-semi-bold;
+        font-weight: 400;
         font-size: $text-size-m-h1;
         line-height: $line-height-m-h1;
 
@@ -44,7 +44,7 @@
         font-family: $primary-font;
         font-size: $text-size-m-p1;
         line-height: $line-height-m-p1;
-        color: $color-black;
+        color: #1D1B20;
         font-weight: $font-regular;
         margin: 0;
         padding: pxToRem(32) pxToRem(24) pxToRem(24);
