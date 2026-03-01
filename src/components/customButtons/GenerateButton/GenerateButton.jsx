@@ -1,9 +1,9 @@
 import './GenerateButton.scss';
 import arrow from "../../../assets/icons/Arrow right.png";
 
-const GenerateButton = ({ onClick }) => {
+const GenerateButton = ({ }) => {
   return (
-    <button className="generate-btn" onClick={onClick} type="submit">
+    <button className="generate-btn" type="submit">
       GENERATE VARIANTS <img src={arrow} alt="Right Arrow" />
     </button>
   );

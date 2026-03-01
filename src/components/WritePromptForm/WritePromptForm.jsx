@@ -11,8 +11,8 @@ import GenerateButton from "../../components/customButtons/GenerateButton/Genera
 import HeaderNavigation from "../HeaderNavigation/HeaderNavigation";
 
 const WritePromptForm = ({ }) => {
-    // const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-    // const PORT = import.meta.env.VITE_PORT;
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+    const PORT = import.meta.env.VITE_PORT;
     const navigate = useNavigate();
 
     // Set initial form data
@@ -32,21 +32,20 @@ const WritePromptForm = ({ }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newPrompt = {
-            warehouse_id: Number(formData.warehouse), item_name: formData.name.trim(),
-            description: formData.desc.trim(), category: formData.category,
-            status: formData.status, quantity: updatedQuantity
+            prompt: (formData.brief + "\nMake sure to include: " + formData.include + "\nMake sure to avoid: " + formData.avoid)
         };
-            try {
-                const res = await axios.post(`${BACKEND_URL}${PORT}/api/query`, newPrompt);
-                console.log("DB response:", res);
-                // Update local state
-                // setInventory((prev) => [...prev, res.data.data]);
-                // Navigate to inventory item details page
-                // navigate(`/inventory/${res.data.data.id}`);
-            }
-            catch (error) {
-                console.error("Error adding new prompt:", error);
-            }
+        try {
+            console.log(newPrompt);
+            const res = await axios.post(`${BACKEND_URL}${PORT}/api/query`, newPrompt);
+            console.log("DB response:", res);
+            // Update local state
+            // setInventory((prev) => [...prev, res.data.data]);
+            // Navigate to inventory item details page
+            // navigate(`/inventory/${res.data.data.id}`);
+        }
+        catch (error) {
+            console.error("Error adding new prompt:", error);
+        }
     };
 
     return (
@@ -56,7 +55,7 @@ const WritePromptForm = ({ }) => {
             <div className="write-prompt-form__content-audience-wrapper">
                 <ContentTypeSelector /> <AudienceSelector />
             </div>
-            <PromptContext />
+            <PromptContext onChange={handleChange} values={formData} />
             <GenerateButton />
         </form>
     );
