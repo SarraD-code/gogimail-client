@@ -8,6 +8,7 @@ import ContentTypeSelector from "../../components/ContentTypeSelector/ContentTyp
 import AudienceSelector from "../../components/AudienceSelector/AudienceSelector";
 import PromptContext from "../../components/PromptContext/PromptContext";
 import GenerateButton from "../../components/customButtons/GenerateButton/GenerateButton";
+import HeaderNavigation from "../HeaderNavigation/HeaderNavigation";
 
 const WritePromptForm = ({ }) => {
     // const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -27,8 +28,30 @@ const WritePromptForm = ({ }) => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+    // Handle form submit
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const newPrompt = {
+            warehouse_id: Number(formData.warehouse), item_name: formData.name.trim(),
+            description: formData.desc.trim(), category: formData.category,
+            status: formData.status, quantity: updatedQuantity
+        };
+            try {
+                const res = await axios.post(`${BACKEND_URL}${PORT}/api/query`, newPrompt);
+                console.log("DB response:", res);
+                // Update local state
+                // setInventory((prev) => [...prev, res.data.data]);
+                // Navigate to inventory item details page
+                // navigate(`/inventory/${res.data.data.id}`);
+            }
+            catch (error) {
+                console.error("Error adding new prompt:", error);
+            }
+    };
+
     return (
-        <form className="write-prompt-form__wrapper">
+        <form className="write-prompt-form__wrapper" onSubmit={handleSubmit}>
+            <HeaderNavigation />
             <PageTitle title="Setup Your Content Request"><StepTag content="Step 1: Prompt" /></PageTitle>
             <div className="write-prompt-form__content-audience-wrapper">
                 <ContentTypeSelector /> <AudienceSelector />

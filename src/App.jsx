@@ -30,14 +30,14 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Header />
-      <SideBar />
+      {/* <Header /> */}
+      {/* <SideBar /> */}
       <Routes> 
         <Route path="/" element={<Home />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="*" element={<PageNotFound title="404 - PAGE NOT FOUND"
           content="The content you are looking for cannot be found." />} />
-        <Route path="/test" element={""} />
+        <Route path="/test" element={<Generate />} />
       </Routes>
       <Footer />
     </BrowserRouter>
