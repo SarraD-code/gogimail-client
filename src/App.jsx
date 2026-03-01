@@ -11,7 +11,7 @@ import AnalyticsPage from "./pages/Analytics/AnalyticsPage.jsx";
 import SideBar from "./components/SideBar/SideBar.jsx";
 import GeneratedEmailsPage from './pages/GeneratedEmailsPage/GeneratedEmailsPage.jsx';
 import ReviewPage from './pages/ReviewPage/ReviewPage.jsx';
-import EmailEditor from './components/EmailEditor/EmailEditor.jsx';
+import AIScoring from './components/AIScoring/AIScoring.jsx';
 
 function App() {
   // const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -29,9 +29,12 @@ function App() {
     };
     fetchData();
   }, []);
-  const email = {subject:"Email Subject",
-    body:"Hi [First Name],We've been listening. Based on feedback from customers like you, we've updated our pricing to give you more flexibility — and added the analytics dashboard at no extra cost, effective March 1st.Your new rate locks in at $49/mo — and your current features stay exactly as they are. No surprises.Ready to explore what's new?— The [Company] Team"
-  }
+  const scores = [
+    { label: "Brand", value: 100 },
+    { label: "Factual", value: 80 },
+    { label: "Compliance", value: 100 },
+    { label: "Clarity", value: 80 }
+  ];
 
   return (
     <BrowserRouter>
@@ -46,7 +49,7 @@ function App() {
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="*" element={<PageNotFound title="404 - PAGE NOT FOUND"
           content="The content you are looking for cannot be found." />} />
-        <Route path="/test" element={<EmailEditor email={email} />} />
+        <Route path="/test" element={<AIScoring scores={scores} />} />
       </Routes>
       <Footer />
     </BrowserRouter>
