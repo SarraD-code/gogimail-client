@@ -2,11 +2,11 @@ import "./Generate.scss";
 import WritePromptForm from "../../components/WritePromptForm/WritePromptForm";
 import PageLayout from "../../components/PageLayout/PageLayout";
 
-const Generate = ({ }) => {
+const Generate = ({ setEmails }) => {
     console.log("Generate Page")
     return (
         <PageLayout>
-            <WritePromptForm />
+            <WritePromptForm setEmails={setEmails} />
         </PageLayout>
     );
 }

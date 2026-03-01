@@ -15,6 +15,7 @@ const PromptContext = ({ onChange, values }) => {
           value={values.brief}
           onChange={onChange}
           className="prompt-context__full-width"
+          placeholder='Write your prompt here'
         />
       </div>
       
@@ -27,6 +28,7 @@ const PromptContext = ({ onChange, values }) => {
             value={values.include}
             onChange={onChange}
             className="prompt-context__half-width"
+            placeholder='Add notes here'
           />
         </div>
         <div className="prompt-context__input-group prompt-context__flex-1">
@@ -36,6 +38,7 @@ const PromptContext = ({ onChange, values }) => {
             value={values.avoid}
             onChange={onChange}
             className="prompt-context__half-width"
+            placeholder='Add notes here'
           />
         </div>
       </div>
