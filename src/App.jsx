@@ -11,7 +11,6 @@ import AnalyticsPage from "./pages/Analytics/AnalyticsPage.jsx";
 import SideBar from "./components/SideBar/SideBar.jsx";
 import GeneratedEmailsPage from './pages/GeneratedEmailsPage/GeneratedEmailsPage.jsx';
 import ReviewPage from './pages/ReviewPage/ReviewPage.jsx';
-import AIScoring from './components/AIScoring/AIScoring.jsx';
 
 function App() {
   // const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -29,12 +28,6 @@ function App() {
     };
     fetchData();
   }, []);
-  const scores = [
-    { label: "Brand", value: 100 },
-    { label: "Factual", value: 80 },
-    { label: "Compliance", value: 100 },
-    { label: "Clarity", value: 80 }
-  ];
 
   return (
     <BrowserRouter>
@@ -49,7 +42,6 @@ function App() {
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="*" element={<PageNotFound title="404 - PAGE NOT FOUND"
           content="The content you are looking for cannot be found." />} />
-        <Route path="/test" element={<AIScoring scores={scores} />} />
       </Routes>
       <Footer />
     </BrowserRouter>

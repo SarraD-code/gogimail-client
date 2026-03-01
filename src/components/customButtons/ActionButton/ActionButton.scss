@@ -1,0 +1,44 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/functions" as *;
+@use "../../../styles/mixins" as *;
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: pxToRem(310);
+    padding: 16px 20px;
+    border-radius: 10px;
+    color: #F5F5F5;
+    font-size: pxToRem(20);
+    font-weight: 400;
+    cursor: pointer;
+    //   margin-bottom: 12px;
+    font-family: $secondary-font;
+}
+
+.approve-direct {
+    background-color: #348027;
+    border: 1px solid #68C657;
+    &:hover, &:focus {
+        background-color: #215718;
+    }
+}
+
+.approve-edits {
+    background-color: #D6A400;
+    border: 1px solid #FFE48A;
+    &:hover, &:focus {
+        background-color: #8a6a01;
+    }
+}
+
+.send-regen {
+    background-color: #B3261E;
+    border: 1px solid #FD4C42;
+    &:hover, &:focus {
+        background-color: #6b130f;
+    }
+}
