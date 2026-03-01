@@ -1,5 +1,6 @@
 # Description
 This is the frontend of Gogimail.
+Backend can be found here: https://github.com/bitbubz/gogimail-server
 
 # Service
 Gogimail handles your email marketing from the AI input, to the content creation and delivery.
