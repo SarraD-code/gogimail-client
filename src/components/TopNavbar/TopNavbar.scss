@@ -6,10 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // padding: 10px 24px;
-    // background-color: #ffffff;
-    // border-bottom: 1px solid #eee;
-    // font-family: sans-serif;
+    gap: 30px;
 
     &__brand-selector {
         display: flex;
@@ -19,8 +16,7 @@
         padding: 8px 16px;
         border-radius: 10px;
         background-color: #F5F5F5;
-        // border: 1px solid #eee;
-        // font-weight: bold;
+        width: 100%;
     }
 
     &__brand-name {
@@ -40,7 +36,7 @@
         background-color: #F5F5F5;
         padding: 8px 16px;
         border-radius: 10px;
-        width: pxToRem(626);
+        width: 100%;
     }
 
     &__search-input {
@@ -56,13 +52,14 @@
     &__user-profile {
         display: flex;
         align-items: center;
-        gap: 18.5px;
+        justify-content: space-between;
+        // gap: 18.5px;
+        width: 60%;
     }
 
     &__avatar {
         width: 66px;
         height: 66px;
-        // border-radius: 50%;
     }
 
     &__user-info {

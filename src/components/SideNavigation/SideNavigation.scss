@@ -7,7 +7,7 @@
     background-color: #5B8EEE;
     color: #F5F5F5;
     padding: 12px;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     font-size: pxToRem(14);
@@ -41,7 +41,7 @@
             background-color: #F5F5F5;
             color: #111117;
             font-weight: 500;
-            font-size: pxToRem(16);
+            // font-size: pxToRem(16);
 
             & .side-navigation__icon path {
                 fill: #434343;

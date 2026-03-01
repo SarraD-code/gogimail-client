@@ -33,8 +33,9 @@ function App() {
       <ScrollToTop />
       {/* <Header /> */}
       {/* <SideBar /> */}
-      <Routes> 
+      <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/generate" element={<Generate />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="*" element={<PageNotFound title="404 - PAGE NOT FOUND"
           content="The content you are looking for cannot be found." />} />

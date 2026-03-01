@@ -12,7 +12,7 @@ import ThreePerson from "../../assets/icons/three-person.svg?react";
 
 const SideNavigation = ({ }) => {
     const navItems = [
-        { name: 'Write Prompt', path: '/test', icon: Pen, count: 12 },
+        { name: 'Write Prompt', path: '/generate', icon: Pen, count: 12 },
         { name: 'Campaigns', path: '/campaigns', icon: Envelope },
         { name: 'Analytics', path: '/analytics', icon: ThreeDots },
         { name: 'Notification', path: '/notifications', icon: Bell },
