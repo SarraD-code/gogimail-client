@@ -9,7 +9,8 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound.jsx";
 import Generate from "./pages/Generate/Generate.jsx";
 import AnalyticsPage from "./pages/Analytics/AnalyticsPage.jsx";
 import SideBar from "./components/SideBar/SideBar.jsx";
-import TopNavbar from './components/TopNavbar/TopNavbar.jsx';
+import GeneratedEmailsPage from './pages/GeneratedEmailsPage/GeneratedEmailsPage.jsx';
+import ReviewPage from './pages/ReviewPage/ReviewPage.jsx';
 
 function App() {
   // const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -36,11 +37,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/generate" element={<Generate setEmails={setEmails} />} />
-        <Route path="/generated-emails" element={<Generate emails={emails} setEmails={setEmails} />} />
+        <Route path="/generated-emails" element={<GeneratedEmailsPage emails={emails} setEmails={setEmails} />} />
+        <Route path="/review" element={<ReviewPage emails={emails} setEmails={setEmails} />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="*" element={<PageNotFound title="404 - PAGE NOT FOUND"
           content="The content you are looking for cannot be found." />} />
-        <Route path="/test" element={<TopNavbar />} />
+        <Route path="/test" element={""} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,0 +1,80 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
+
+.variant-card {
+    outline: none;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #F5F5F5;
+    border: 7px solid #F5F5F5;
+    max-width: pxToRem(455);
+
+    &:hover,
+    &:focus {
+        border: 7px solid #5A8CEA;
+    }
+
+    &__card-header {
+        background-color: #5A8CEA;
+        color: #1D1B20;
+        padding: 26px 16px;
+        font-weight: 400;
+        font-size: pxToRem(14);
+    }
+
+    &__card-body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: space-between;
+        // height: 100%;
+    }
+
+    &__card-title {
+        margin: 0;
+        color: #1D1B20;
+        font-weight: 500;
+        font-size: pxToRem(16);
+    }
+
+    &__card-content {
+        color: #49454F;
+        line-height: 1.5;
+        margin: 0;
+        font-weight: 400;
+        font-size: pxToRem(14);
+    }
+
+    &__metrics-group {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__metric-badge {
+        padding: 8px 12px;
+        border-radius: 40px;
+        font-size: pxToRem(12);
+        font-family: $secondary-font;
+        color: #CACACA;
+
+        /* Badge Variants */
+        &.positive {
+            background-color: #348027;
+        }
+
+        &.negative {
+            background-color: #B3261E;
+        }
+
+        &.medium {
+            background-color: #CE8E03;
+        }
+    }
+}
+
+.recommended {
+    color: #FEF7FF;
+}

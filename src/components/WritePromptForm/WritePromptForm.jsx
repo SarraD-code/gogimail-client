@@ -42,10 +42,13 @@ const WritePromptForm = ({ setEmails }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newPrompt = {
-            prompt: ("Write three emails with this prompt: " + formData.brief + "\nMake sure to include: " + formData.include + "\nMake sure to avoid: " + formData.avoid)
+            prompt: ("Write three emails with this prompt: " + formData.brief
+                + "\nMake sure to include: " + formData.include
+                + "\nMake sure to avoid: " + formData.avoid
+                + "Each email must be formatted like a json object with two keys 'subject' and 'body'. You must not include anything else to your answer.")
         };
         try {
-            let ms = 500;
+            let ms = 250;
             console.log(newPrompt);
             setIsFormHidden(true);
             setIsTitleVisible(true);
@@ -54,33 +57,37 @@ const WritePromptForm = ({ setEmails }) => {
             setIsYellowVisible(true);
             await delay(ms);
             setIsGreenVisible(true);
-            const res = await axios.post(`${BACKEND_URL}${PORT}/api/query`, newPrompt);
+            await delay(ms);
             setIsPurpleVisible(true);
+            const res = await axios.post(`${BACKEND_URL}${PORT}/api/query`, newPrompt);
             await delay(ms);
             setIsBlueVisible(true);
             await delay(ms);
             setIsRedVisible(true);
             console.log("DB response:", res.data.answer);
 
-            // Regex with two capturing groups:
-            // 1. ([^\r\n]+) captures the subject line until the end of the line
-            // 2. ([\s\S]*?) captures the email body until "[Your Contact Information]"
-            const regex = /Subject:\s*(.*?)\n+([\s\S]*?)\[Your Contact Information\]/gi;
+            const inputString = res.data.answer;
+
+            // 1. Use a regex to find all content between ```json and ```
+            const jsonRegex = /```json\s*([\s\S]*?)\s*```/g;
 
             const parsedEmails = [];
             let match;
             let key = 1;
-
-            while ((match = regex.exec(res.data.answer)) !== null) {
-                parsedEmails.push({
-                    subject: match[1].trim(),
-                    body: match[2].trim(),
-                    id: key
-                });
-                id++;
+            // 2. Iterate through all matches found in the string
+            while ((match = jsonRegex.exec(inputString)) !== null) {
+                try {
+                    // 3. Parse the captured string into a JavaScript object
+                    let emailObject = JSON.parse(match[1]);
+                    emailObject.id = key;
+                    parsedEmails.push(emailObject);
+                    key++;
+                } catch (e) {
+                    console.error("Failed to parse JSON block:", e);
+                }
             }
 
-            console.log(parsedEmails);
+            console.log('Successfully extracted emails:', parsedEmails);
 
             // Update local state
             setEmails(parsedEmails);

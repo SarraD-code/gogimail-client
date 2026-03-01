@@ -10,17 +10,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-light-grey;
+    background-color: #F5F5F5;
     width: 100%;
     height: 100%;
     padding: 32px;
+    border-radius: 12px;
 }
 
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 10px solid $color-graphite; /* Light grey */
-  border-top: 10px solid $color-black; /* Blue */
+  border: 10px solid #49454F; /* Light grey */
+  border-top: 10px solid #5A8CEA; /* Blue */
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 }

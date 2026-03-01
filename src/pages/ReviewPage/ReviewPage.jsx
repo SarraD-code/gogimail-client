@@ -1,4 +1,4 @@
-import "./GeneratedEmailsPage.scss";
+import "./ReviewPage.scss";
 import { useEffect, useState } from "react";
 import PageLayout from "../../components/PageLayout/PageLayout";
 import HeaderNavigation from "../../components/HeaderNavigation/HeaderNavigation";
@@ -8,7 +8,7 @@ import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import VariantCard from "../../components/VariantCard/VariantCard";
 import LinkButton from "../../components/LinkButton/LinkButton";
 
-const GeneratedEmailsPage = ({ emails }) => {
+const ReviewPage = ({ emails }) => {
     const [isLodaing, setIsLoading] = useState(true);
     const [selectedEmail, setSelectedEmail] = useState(null);
 
@@ -63,4 +63,4 @@ const GeneratedEmailsPage = ({ emails }) => {
                 : <PageLayout></PageLayout >
     );
 }
-export default GeneratedEmailsPage;
+export default ReviewPage;

@@ -1,5 +1,5 @@
 import './SideNavigation.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Bell from "../../assets/icons/bell.svg?react";
 import Envelope from "../../assets/icons/envelope.svg?react";
 import Hand from "../../assets/icons/hand.svg?react";
@@ -23,22 +23,39 @@ const SideNavigation = ({ }) => {
         { name: 'Help', path: '/help', icon: Hand },
     ];
     let IconSvg = null;
+    const { pathname } = useLocation();
+    const generatePaths = ['/generate', '/generated-emails', '/review'];
+    const isGeneratePathAtive = () => generatePaths.some(path => pathname.startsWith(path));
 
     return (
         <div className="side-navigation">
+            <div>
+                {navItems[0].section && <div className="side-navigation__section-header">{navItems[0].section}</div>}
+                {IconSvg = navItems[0].icon}
+                <NavLink
+                    to={navItems[0].path}
+                    className={({ isActive }) => `side-navigation__nav-item ${isActive || isGeneratePathAtive() ? 'highlight' : ''}`}
+                >
+                    <IconSvg className="side-navigation__icon" />
+                    <span className="side-navigation__name">{navItems[0].name}</span>
+                    {navItems[0].count && <span className="side-navigation__count">{navItems[0].count}</span>}
+                </NavLink>
+            </div>
             {navItems.map((item, index) => (
-                <div key={index}>
-                    {item.section && <div className="side-navigation__section-header">{item.section}</div>}
-                    {IconSvg = item.icon}
-                    <NavLink
-                        to={item.path}
-                        className={({ isActive }) => `side-navigation__nav-item ${isActive ? 'highlight' : ''}`}
-                    >
-                        <IconSvg className="side-navigation__icon" />
-                        <span className="side-navigation__name">{item.name}</span>
-                        {item.count && <span className="side-navigation__count">{item.count}</span>}
-                    </NavLink>
-                </div>
+                index > 0 ?
+                    <div key={index}>
+                        {item.section && <div className="side-navigation__section-header">{item.section}</div>}
+                        {IconSvg = item.icon}
+                        <NavLink
+                            to={item.path}
+                            className={({ isActive }) => `side-navigation__nav-item ${isActive ? 'highlight' : ''}`}
+                        >
+                            <IconSvg className="side-navigation__icon" />
+                            <span className="side-navigation__name">{item.name}</span>
+                            {item.count && <span className="side-navigation__count">{item.count}</span>}
+                        </NavLink>
+                    </div>
+                    : ""
             ))}
         </div>
     );
