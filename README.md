@@ -49,7 +49,7 @@ It integrates with a backend service (see [gogimail-server](https://github.com/b
 1. Clone the repository
 
 ```bash
-git clone https://github.com/bitbubz/gogimail-client.git
+git clone https://github.com/SarraD-code/gogimail-client.git
 cd gogimail-client
 ```
 
@@ -96,13 +96,13 @@ npm run dev
 
 ## Where to get help
 
-- Issues: open at https://github.com/bitbubz/gogimail-client/issues
+- Issues: open at https://github.com/SarraD-code/gogimail-client/issues
 - Backend repo: https://github.com/bitbubz/gogimail-server
 - Check [README.md](README.md) and `.github/` for future docs
 
 ## Who maintains and contributes
 
-- Maintainer: `bitbubz` team (project owner)
+- Maintainer: `SarraD-code`
 - Contributions welcome via pull requests
 - No `CONTRIBUTING.md` file in this repo; use GitHub standard PR workflow:
   1. Fork repository
